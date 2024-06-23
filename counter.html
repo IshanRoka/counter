@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            border: none; outline: none;
+        }
+        body{
+            background: rgb(210, 206, 206);
+        }
+        .container{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            display: flex;
+            align-items: center;
+            background: white;
+            width: 200px;
+            padding: 20% 30%;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .btn{
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        button{
+            padding: 10px 20px;
+            color: white;
+            font-size: 22px;
+        }
+        h2{
+            font-size: 60px;
+        }
+        .dec{
+            background: blue;
+        }
+        .inc{
+            background: green;
+        }
+        .res{
+            background: beige;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>Counter</h1>
+            <h2 class="count">0</h2>
+            <div class="btn">
+                <button class="dec">-</button>
+            <button class="res">Reset</button>
+            <button class="inc">+</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const inc=document.querySelector(".inc")
+        const dec=document.querySelector(".dec")
+        const res=document.querySelector(".res")
+        const CountElement=document.querySelector(".count")
+        let Count=0;
+
+        inc.addEventListener("click",()=>{
+            Count++
+            CountElement.innerHTML=Count
+        })
+        dec.addEventListener("click",()=>{
+            Count--
+            CountElement.innerHTML=Count
+        })
+        res.addEventListener("click",()=>{
+           Count=0
+            CountElement.innerHTML=Count
+        })
+    </script>
+</body>
+</html>
